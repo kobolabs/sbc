@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -f config.status ]; then
+	make maintainer-clean
+fi
+
+./bootstrap-kobo && \
+    ./configure --with-sysroot=/chroot --host=arm-linux --prefix= $*
